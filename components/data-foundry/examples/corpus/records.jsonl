@@ -1,0 +1,3 @@
+{"text": "Deterministic splits keep evaluation comparable across dataset versions, because a record does not move between train and holdout when the corpus grows.", "topic": "evaluation"}
+{"text": "Near-duplicate detection by shingle overlap is lexical. It catches boilerplate and lightly edited copies, and it will not catch a genuine paraphrase.", "topic": "dedup"}
+{"text": "Contact the maintainer at maintainer@example.invalid for access questions.", "topic": "contact"}
