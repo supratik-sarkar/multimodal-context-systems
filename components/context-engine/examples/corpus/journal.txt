@@ -1,0 +1,8 @@
+Operation journal
+
+The operation journal records every side effect before and after it executes.
+A row written before the call marks the operation as started; a row written
+after marks it completed with its result.
+
+On restart the journal is consulted before any side effect runs. An operation
+already marked completed is not repeated; its stored result is reused instead.

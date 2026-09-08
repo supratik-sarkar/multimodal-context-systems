@@ -1,0 +1,7 @@
+Authorization policy
+
+Policy checks run in a fixed order and fail closed. The order is principal
+identity, replay detection, delegation validity, scope, allowlist, then egress.
+
+Delegation is scope minimising. A delegator cannot grant authority it does not
+itself hold, and a delegate confined by a narrow grant cannot exceed it.

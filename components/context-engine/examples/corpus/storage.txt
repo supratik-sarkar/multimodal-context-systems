@@ -1,0 +1,8 @@
+Durable storage layer
+
+The storage layer appends checkpoints rather than updating them in place. Each
+write creates a new version, so a crash during a write leaves the previous
+version intact and loadable.
+
+Checkpoints are keyed by run identifier and version number. Retention is not
+implemented, so checkpoint count grows without bound over a long-lived run.
