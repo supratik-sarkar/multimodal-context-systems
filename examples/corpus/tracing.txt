@@ -1,0 +1,7 @@
+Distributed tracing
+
+Spans are emitted for each phase, agent invocation and tool call, nested under
+a single root span for the run.
+
+Each tool span carries the operation identifier and a flag indicating whether
+the result was replayed from the journal rather than recomputed.

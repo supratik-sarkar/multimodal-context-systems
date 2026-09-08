@@ -1,0 +1,32 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "graph-context-engine"
+version = "0.1.0"
+description = "Hybrid retrieval over text and a document graph: BM25, dense vectors, graph traversal and reciprocal-rank fusion, with multi-hop decomposition and span-level citation grounding."
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "Apache-2.0" }
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.6", "mypy>=1.11"]
+mac = ["mlx>=0.18", "mlx-vlm>=0.1", "pillow>=10"]
+
+[project.scripts]
+gce = "gce.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/gce"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
