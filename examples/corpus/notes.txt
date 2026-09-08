@@ -1,0 +1,3 @@
+Retrieval quality depends far more on the chunking strategy and the evidence
+boundary than on the embedding model, which is the opposite of where most
+teams spend their tuning effort in practice.

@@ -1,0 +1,31 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "genai-data-foundry"
+version = "0.1.0"
+description = "A GenAI-specific data pipeline: parsing, exact and near-duplicate detection, PII redaction, contamination checks, quality gates and record-level lineage into versioned dataset manifests."
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "Apache-2.0" }
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.6", "mypy>=1.11"]
+
+[project.scripts]
+gdf = "gdf.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/gdf"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
